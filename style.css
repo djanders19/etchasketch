@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 528;
+    height: 528;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px 10px 10px;
+}
+
+td {
+    padding: 0;
+}
+
+.container div {
+    margin: 0;
+    background-color: darkgray;
+}
