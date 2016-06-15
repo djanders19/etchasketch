@@ -6,6 +6,11 @@
     height: 528;
 }
 
+button {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 #button {
     display: flex;
     justify-content: center;
@@ -19,5 +24,5 @@ td {
 
 .container div {
     margin: 0;
-    background-color: darkgray;
+    background-color: black;
 }

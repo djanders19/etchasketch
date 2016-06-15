@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>Etch-a-Sketch</title>
-        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="reset.css" type="text/css" rel="stylesheet">
@@ -13,11 +12,13 @@
     
     <body>
         <div id="button">
-            <button>Refresh</button>
+            <button id="reset1">Refresh - Standard</button>
+            <button id="reset2">Refresh - Fade</button>
+            <button id="reset3">Refresh - Rainbow</button>
         </div>
         
         <div class="container">
-            <table id="myGrid"></table>
+            <table id="myGrid"><!--Grid placed here by script.js --></table>
         </div>    
     
     </body>

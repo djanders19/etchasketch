@@ -1,3 +1,4 @@
+// A browser based etch-a-sketch. Feel free to do whatever you want with it
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 
@@ -20,18 +21,33 @@ function makeGrid(rows, columns) {
     $('.container div').css('width', squareWidth);
 }
 
-function changeColorWhenMouseEntersDiv() {
+function randRgbValue() {
+    return Math.floor(Math.random() * 256)
+}
+
+function changeColorWhenMouseEntersDiv(type) {
     $('.container div').mouseenter(function () {
-        $(this).css('background-color', 'red'); // Change color on mouseenter
+        if (type === 'reset1') {
+            // TODO: Give each button a type and then CSS based on that type
+            $(this).css('background-color', 'white');//Change clr on mouseenter
+        } else if (type === 'reset2') {
+            currentOpacity = $(this).css('opacity');
+            nextOpacity = currentOpacity - 0.1;
+            $(this).css('opacity', nextOpacity);
+        } else if (type === 'reset3') {
+            changeColorTo = "rgb(" + randRgbValue() + "," + randRgbValue() + "," + randRgbValue() + ")";
+            console.log(changeColorTo)
+            $(this).css('background-color', changeColorTo);
+        }
     });
 }
 
-function resetButton() {
-    $('button').click(function () {
+function resetButton(idTag) {
+    $('#' + idTag).click(function () {
         var rows = prompt('Please enter a new grid size:'), columns = rows;
-        $('#myGrid').empty(); // KILL THE CHILDREN!!
+        $('#myGrid').empty(); // KILL ALL CHILDREN!!
         makeGrid(rows, columns);
-        changeColorWhenMouseEntersDiv();
+        changeColorWhenMouseEntersDiv(idTag);
     });
 }
 
@@ -39,6 +55,8 @@ $(document).ready(function () {
     'use strict'; // fuck you too JSLint
     var rows = 16, columns = 16;
     makeGrid(rows, columns);
-    changeColorWhenMouseEntersDiv(); // My code is self-documenting, clearly
-    resetButton();
+    changeColorWhenMouseEntersDiv('reset1'); // My code is self-documenting, clearly
+    resetButton('reset1');
+    resetButton('reset2');
+    resetButton('reset3')
 });
