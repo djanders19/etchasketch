@@ -2,8 +2,7 @@
 // using solely ES6 JS and HTML/CSS.
 // Adapted from a project I did in 2016 where
 // I used jQuery to do the same.
-
-let MODE = 'rand';
+let MODE = 'bw';
 
 /**
  * Create a grid of squares with the specified
